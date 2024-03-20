@@ -37,6 +37,7 @@ in
       GOMODCACHE="${homeDirectory}/.cache/go/pkg/mod";
       GOBIN = "${homeDirectory}/.local/share/go/bin";
       PATH = "$PATH:$GOBIN";
+      GOSUMDB = "off";
     };
 
     sessionPath = [

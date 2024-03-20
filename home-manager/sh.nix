@@ -59,7 +59,6 @@ in
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
         git config --file ~/.gitconfig.local url."https://$(gh auth token):x-oauth-basic@github.com/".insteadOf "https://github.com/"
-        GOSUMDB=off
         GOPRIVATE=github.com/zsmartex,github.com/safetrade-exchange
         eval "$(direnv hook zsh)"
       '';
