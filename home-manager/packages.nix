@@ -8,9 +8,6 @@
   };
 
   home.packages = with pkgs; with gnome; [
-    # colorscript
-    (import ./colorscript.nix { inherit pkgs; })
-
     # tools
     bat
     eza
