@@ -51,6 +51,7 @@
     corepack
     obsidian
     glibc
+    rbenv
     pkgs.nodePackages."eas-cli"
   ];
 }
