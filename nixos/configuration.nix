@@ -73,8 +73,9 @@
       "libvirtd"
       "adbusers"
     ];
-    defaultUserShell = pkgs.zsh;
   };
+
+  users.defaultUserShell = pkgs.zsh;
 
   virtualisation.docker.enable = true;
 
