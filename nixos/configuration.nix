@@ -14,6 +14,10 @@
     };
   };
 
+  # zsh
+  programs.zsh.enable = true;
+
+  # ld
   programs.nix-ld.enable = true;
 
   # virtualisation
@@ -69,6 +73,7 @@
       "libvirtd"
       "adbusers"
     ];
+    defaultUserShell = pkgs.zsh;
   };
 
   virtualisation.docker.enable = true;
