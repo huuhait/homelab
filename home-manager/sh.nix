@@ -34,7 +34,6 @@ let
     "del" = "gio trash";
     "hm" = "${hm}";
     "vault" = "${vault}";
-    "docker-compose" = "docker compose";
     "k" = "kubectl";
     "kaf" = "kubectl apply -f";
     "kdf" = "kubectl delete -f";

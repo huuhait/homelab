@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, username, hostname, ... }: {
+{ config, pkgs, inputs, username, hostname, nixpkgs-ruby, ... }: {
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./locale.nix
@@ -13,6 +13,8 @@
       auto-optimise-store = true;
     };
   };
+
+  nixpkgs.overlays = [ nixpkgs-ruby.overlays.default ];
 
   # zsh
   programs.zsh.enable = true;
@@ -38,6 +40,12 @@
     libsecret
     pciutils
 
+    rustup
+
+    python311Packages.pip
+
+    solana-cli
+
     # Languages
     go
     gopls
@@ -50,9 +58,12 @@
     fnm
     bun
     gcc
+    pkgs."ruby-3.0.1"
 
     # Tools
     gnumake
+    direnv
+    gmp
   ];
 
   # logind
@@ -118,5 +129,9 @@
     };
   };
 
-  system.stateVersion = "23.11";
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
+  system.stateVersion = "24.05";
 }

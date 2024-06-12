@@ -1,7 +1,7 @@
 {
   description = "Home Manager and NixOS configuration of huuhait";
 
-  outputs = { self, home-manager, nixpkgs, ... }@inputs: let
+  outputs = { self, home-manager, nixpkgs, nixpkgs-ruby, ... }@inputs: let
     username = "huuhait";
     hostname = "nixos";
     system = "x86_64-linux";
@@ -12,7 +12,7 @@
   in {
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs username hostname; };
+      specialArgs = { inherit inputs username hostname nixpkgs-ruby; };
       modules = [ ./nixos/configuration.nix ];
     };
 
@@ -28,6 +28,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs-ruby = {
+      url = "github:bobvanderlinden/nixpkgs-ruby";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

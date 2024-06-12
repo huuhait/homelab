@@ -12,8 +12,6 @@ in
     "${fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master"}/modules/vscode-server/home.nix"
   ];
 
-  news.display = "show";
-
   targets.genericLinux.enable = true;
 
   nix = {
@@ -51,5 +49,5 @@ in
   };
 
   programs.home-manager.enable = true;
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

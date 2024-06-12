@@ -23,6 +23,8 @@
     zip
     unzip
     glib
+    zlib.dev
+    zlib.out
     htop
     btop
     tmate
@@ -47,11 +49,11 @@
     terraform
     vault
     consul
+    docker-compose
     postgresql
     corepack
     obsidian
     glibc
-    rbenv
     pkgs.nodePackages."eas-cli"
   ];
 }
